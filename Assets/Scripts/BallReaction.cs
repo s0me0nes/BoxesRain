@@ -15,6 +15,7 @@ public class BallReaction : MonoBehaviour
     private void OnDisable()
     {
         _isContacted = false;
+        _renderer.material.color = Color.white;
     }
 
     private void OnCollisionEnter(Collision collision)
