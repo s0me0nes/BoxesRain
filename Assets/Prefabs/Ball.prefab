@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 5755196401587273927}
   - component: {fileID: 3269712760273441313}
   - component: {fileID: 1847508873549388780}
-  - component: {fileID: 9092625264489821736}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -154,15 +153,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb3390e6d0246d04ab35b69dbd78a886, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Ball
---- !u!114 &9092625264489821736
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8752082157777855090}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 837e042c20527a547b7ba753b534266d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BallReaction

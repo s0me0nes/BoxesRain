@@ -22,22 +22,22 @@ public class BallSpawner : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(Spawner());
+        StartCoroutine(Spawn());
     }
 
-    private IEnumerator Spawner()
+    private IEnumerator Spawn()
     {
         var timeToSpawn = new WaitForSeconds(1);
 
         while (true)
         {
-            PoolObjects();
+            SpawnBall();
 
             yield return timeToSpawn;
         }
     }
 
-    private void PoolObjects()
+    private void SpawnBall()
     {
         Vector3 randomSpawnPosition = GetRandomSpawnPosition();
 
@@ -50,9 +50,17 @@ public class BallSpawner : MonoBehaviour
                 return;
             }
         }
-        
-        Ball newBall = Instantiate(_ballPrefab, randomSpawnPosition, Quaternion.identity);
-        _balls.Add(newBall);
+
+        Ball newObject = Instantiate(_ballPrefab, randomSpawnPosition, Quaternion.identity);
+
+        if (newObject.TryGetComponent<Ball>(out var newBall))
+        {
+            _balls.Add(newBall);
+        }
+        else
+        {
+            Debug.Log("На префабе отсутствует компонент - " + _ballPrefab);
+        }
     }
 
     private Vector3 GetRandomSpawnPosition()
